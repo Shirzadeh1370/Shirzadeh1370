@@ -1,0 +1,11 @@
+From: IT Support <support@corp.example>
+To: employee@example.com
+Reply-To: credentials@urgent-help.example
+Subject: Urgent: verify your account immediately
+Date: Thu, 1 Oct 2026 10:00:00 +0000
+Message-ID: <test-alert@example.com>
+Authentication-Results: mx.example.com; spf=fail; dkim=fail; dmarc=fail
+Content-Type: text/plain; charset=utf-8
+
+Your access will expire immediately. Verify your password.
+Open https://account-verify.example/login to continue.

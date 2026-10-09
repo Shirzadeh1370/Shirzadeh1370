@@ -1,0 +1,10 @@
+From: Updates Team <updates@notifications.example.com>
+To: employee@example.com
+Subject: Monthly account update
+Date: Thu, 1 Oct 2026 09:00:00 +0000
+Message-ID: <benign-2026@example.com>
+Authentication-Results: mx.example.com; spf=pass; dkim=pass; dmarc=pass
+Content-Type: text/plain; charset=utf-8
+
+Here is your monthly account summary.
+For general information visit https://notifications.example.com/updates
