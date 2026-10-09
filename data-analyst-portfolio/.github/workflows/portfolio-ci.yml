@@ -1,0 +1,28 @@
+name: Data analytics project tests
+
+on:
+  push:
+    paths:
+      - 'data-analyst-portfolio/**'
+      - '.github/workflows/portfolio-ci.yml'
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+      - name: Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install analysis dependencies
+        run: pip install -r data-analyst-portfolio/requirements.txt
+      - name: Run all end-to-end project tests
+        run: python -m unittest discover -s data-analyst-portfolio/tests -v
+      - name: Save generated charts and reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: data-analyst-portfolio-reports
+          path: data-analyst-portfolio/*/outputs/
