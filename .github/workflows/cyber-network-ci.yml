@@ -1,0 +1,26 @@
+name: Cybersecurity and network portfolio CI
+
+on:
+  push:
+    paths:
+      - 'cyber-network-portfolio/**'
+      - '.github/workflows/cyber-network-ci.yml'
+  workflow_dispatch:
+
+jobs:
+  offline-demos-and-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run six offline demos and tests
+        run: python cyber-network-portfolio/run_all.py
+      - name: Upload generated reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: cyber-network-demo-reports
+          path: cyber-network-portfolio/*/outputs/

@@ -1,0 +1,6 @@
+segment,required_hosts
+Office LAN,50
+Lab LAN,25
+Guest WiFi,15
+Management,8
+Point-to-Point,2
